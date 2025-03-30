@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption and Decryption</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-lock me-2"></i>Encryption App
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos"><i class="fas fa-video me-1"></i>Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#discussion"><i class="fas fa-comments me-1"></i>Discussion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <section id="home" class="mb-5">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-shield-alt me-2"></i>Encryption and Decryption
+                    </h1>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <label for="userText" class="form-label">
+                                    <i class="fas fa-keyboard me-2"></i>Enter a message:
+                                </label>
+                                <input type="text" class="form-control form-control-lg" id="userText" placeholder="Type your message">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="userShift" class="form-label">
+                                    <i class="fas fa-sliders-h me-2"></i>Enter a shift value (1-25):
+                                </label>
+                                <input type="number" class="form-control form-control-lg" id="userShift" placeholder="Shift value" min="1" max="25">
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                <button class="btn btn-primary btn-lg me-md-2" onclick="handleEncryption()">
+                                    <i class="fas fa-lock me-2"></i>Encrypt
+                                </button>
+                                <button class="btn btn-success btn-lg" onclick="handleDecryption()">
+                                    <i class="fas fa-unlock me-2"></i>Decrypt
+                                </button>
+                            </div>
+
+                            <div id="result" class="mt-4 p-3 rounded result-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos" class="mb-5">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-video me-2"></i>Videos on Encryption in Cybersecurity
+                    </h1>
+                    <div class="video-container">
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/6-JjHa-qLPk?si=wj2kkZSmzFxI5SHC" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/TImdsUglGv4?si=Q6dB_iJNtX2FPJD-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/AQDCe585Lnc?si=DiDIm8aQMbNQK2WX" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="discussion" class="mb-5">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-comments me-2"></i>Discussion Board
+                    </h1>
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <ul class="discussion-list">
+                                <li>
+                                    <div class="discussion-item">
+                                        <h3><i class="fas fa-question-circle me-2"></i>Why is encryption important?</h3>
+                                        <p>
+                                            Encryption protects sensitive information by converting data into unreadable formats for unauthorized users.
+                                            It ensures privacy, secures communication channels, and safeguards financial transactions.
+                                        </p>
+                                        <a href="https://www.genetec.com/blog/cybersecurity/what-is-encryption-and-how-important-is-it" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-external-link-alt me-1"></i>Learn More
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="discussion-item">
+                                        <h3><i class="fas fa-exclamation-triangle me-2"></i>Can encryption be misused?</h3>
+                                        <p>
+                                            Yes, Misuse of encryption refers to the use of cryptographic techniques for purposes other than their intended and legitimate purposes, 
+                                            such as for concealing illegal or unethical activities. Cryptography is a powerful tool for protecting information and communication
+                                            from unauthorized access, but it can also be misused to facilitate criminal activities such as money laundering, terrorism, and cybercrime.
+                                        </p>
+                                        <a href="https://cqr.company/web-vulnerabilities/misuse-of-cryptography/" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-external-link-alt me-1"></i>Learn More
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="discussion-item">
+                                        <h3><i class="fas fa-balance-scale me-2"></i>Discussion on real-life ethical concerns about encryption:</h3>
+                                        <p>
+                                            Does encryption do more good than harm? Cryptography experts acknowledge that encryption might hamper some law enforcement efforts.
+                                            However, they argue that, while law enforcement agents have a variety of other means by which to capture and prosecute criminals, 
+                                            most people don't have other effective means of protecting their information from snoopers, identity thieves, and the like.
+                                        </p>
+                                        <a href="https://www.scu.edu/ethics/focus-areas/technology-ethics/resources/ethical-questions-about-encryption/" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-external-link-alt me-1"></i>Learn More
+                                        </a>
+                                    </div>
+                                </li>
+
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 py-3">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 Encryption App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html> 
